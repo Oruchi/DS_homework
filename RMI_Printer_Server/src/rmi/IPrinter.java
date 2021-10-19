@@ -1,40 +1,40 @@
 package rmi;
 import java.rmi.Remote;
 
-//¶¨ÒåÔ¶³Ì½Ó¿Ú,ServerËùĞèÒªµÄ·şÎñ¾ù´Ó¸Ã½Ó¿Úµ÷ÓÃ²ÎÊı
+//å®šä¹‰è¿œç¨‹æ¥å£,Serveræ‰€éœ€è¦çš„æœåŠ¡å‡ä»è¯¥æ¥å£è°ƒç”¨å‚æ•°
 public interface IPrinter extends Remote{
 	
-	//´òÓ¡²Ù×÷£¬ÔÚ"printer"´òÓ¡»úÉÏ´òÓ¡"filename"ÎÄ¼ş
+	//æ‰“å°æ“ä½œï¼Œåœ¨"printer"æ‰“å°æœºä¸Šæ‰“å°"filename"æ–‡ä»¶
 	public void print(String filename, String printer) throws java.rmi.RemoteException;
 	
-	//ÏÔÊ¾Ä¿Ç°"printer"µÄ´òÓ¡¶ÓÁĞ£¬ĞèÒªÏÔÊ¾"job number"ºÍ"filename"
+	//æ˜¾ç¤ºç›®å‰"printer"çš„æ‰“å°é˜Ÿåˆ—ï¼Œéœ€è¦æ˜¾ç¤º"job number"å’Œ"filename"
 	public void queue(String printer) throws java.rmi.RemoteException;
 	
-	//½«"job"ÈÎÎñ·ÅÖÃÔÚ"printer"µÄ´òÓ¡¶ÓÁĞ¶¥¶Ë
+	//å°†"job"ä»»åŠ¡æ”¾ç½®åœ¨"printer"çš„æ‰“å°é˜Ÿåˆ—é¡¶ç«¯
 	public void topQueue(String printer, int job) throws java.rmi.RemoteException;
 	
-	//¿ªÆô´òÓ¡»ú·şÎñ
+	//å¼€å¯æ‰“å°æœºæœåŠ¡
 	public void start() throws java.rmi.RemoteException;
 	
-	//¹Ø±Õ´òÓ¡»ú·şÎñ
+	//å…³é—­æ‰“å°æœºæœåŠ¡
 	public void stop() throws java.rmi.RemoteException;
 	
-	//ÖØÆô´òÓ¡»ú·şÎñ£¬Çå¿Õ´òÓ¡»ú¶ÓÁĞ
-	public void restrat() throws java.rmi.RemoteException;
+	//é‡å¯æ‰“å°æœºæœåŠ¡ï¼Œæ¸…ç©ºæ‰“å°æœºé˜Ÿåˆ—
+	public void restart() throws java.rmi.RemoteException;
 	
-	//ÏÔÊ¾´òÓ¡»úµÄ×´Ì¬
+	//æ˜¾ç¤ºæ‰“å°æœºçš„çŠ¶æ€
 	public void status(String printer) throws java.rmi.RemoteException;
 	
-	//¶ÁÈ¡ÓÃ»§²ÎÊı£ºid£¬ÓÃ»§Ãû
+	//è¯»å–ç”¨æˆ·å‚æ•°ï¼šidï¼Œç”¨æˆ·å
 	public void readConfig(String parameter) throws java.rmi.RemoteException;
 	
-	//ÉèÖÃÓÃ»§²ÎÊı£ºÓÃ»§Ãû£¬ÃÜÂë£º
+	//è®¾ç½®ç”¨æˆ·å‚æ•°ï¼šç”¨æˆ·åï¼Œå¯†ç ï¼š
 	public void setConfig(String parameter, String value) throws java.rmi.RemoteException;
 	
-	//¸Ã·½·¨ÎªÊ¾Àı·½·¨£¬Àí½âºóÇë×¢ÊÍµô
+	//è¯¥æ–¹æ³•ä¸ºç¤ºä¾‹æ–¹æ³•ï¼Œç†è§£åè¯·æ³¨é‡Šæ‰
 	public void example(String example) throws  java.rmi.RemoteException;
 	
-	//Ğ£ÑéÓÃ»§ÃûÓëÃÜÂë
+	//æ ¡éªŒç”¨æˆ·åä¸å¯†ç 
 	public void isCustomer(String userName,String userPassword) throws  java.rmi.RemoteException;
 	
 }
